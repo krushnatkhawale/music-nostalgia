@@ -1,0 +1,17 @@
+{
+  "name": "Barbershop Radio",
+  "tagline": "90s Bollywood bangers that play at Indian barber shops.",
+  "accent": "#f5b301",
+  "defaultPlaylistId": "PLTJ1PnzCWyFw",
+  "playlists": {
+    "youtubeMusic": {
+      "label": "YT Music",
+      "url": "https://music.youtube.com/playlist?list=PLTJ1PnzCWyFw"
+    },
+    "spotify": {
+      "label": "Spotify",
+      "url": "https://open.spotify.com/playlist/2AVjI8Z57bqMJVtU3V9X1Q"
+    }
+  },
+  "backgrounds": []
+}
