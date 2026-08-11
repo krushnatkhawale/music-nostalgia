@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { SITE } from '../config'
 
 const resolve = (p) => {
@@ -10,6 +11,7 @@ export default function Background({ activeIndex }) {
   const { backgrounds = [], backgroundVideo = '', backgroundMode = '', backgroundSpeed = 1 } = SITE
   const bgList = Array.isArray(backgrounds) ? backgrounds : []
   const speed = backgroundSpeed && backgroundSpeed > 0 ? backgroundSpeed : 1
+  const [tilePx, setTilePx] = useState(null)
 
   const mode =
     backgroundMode ||
@@ -20,6 +22,24 @@ export default function Background({ activeIndex }) {
         : bgList.length === 1
           ? 'static'
           : 'none')
+
+  // Measure the image's rendered tile width (aspect * viewport height) so the
+  // scroll loop wraps by exactly one tile — a seamless, invisible seam.
+  useEffect(() => {
+    if (mode !== 'scroll' || !bgList[0]) return
+    const img = new Image()
+    img.onload = () => {
+      if (!img.naturalWidth) return
+      const set = () => setTilePx(Math.round((img.naturalWidth / img.naturalHeight) * window.innerHeight))
+      set()
+      window.addEventListener('resize', set)
+      return () => window.removeEventListener('resize', set)
+    }
+    img.src = resolve(bgList[0])
+    return () => {
+      img.src = ''
+    }
+  }, [mode, bgList[0]]) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (mode === 'none') return null
 
@@ -36,17 +56,17 @@ export default function Background({ activeIndex }) {
           poster={bgList[0] ? resolve(bgList[0]) : undefined}
         />
       ) : mode === 'scroll' ? (
-        <div className="bg-layers mode-scroll">
-          {[0, 1].map((i) => (
-            <div
-              key={i}
-              className="bg-layer bg-marquee"
-              style={{
-                backgroundImage: `url(${resolve(bgList[0])})`,
-                animationDuration: `${Math.max(0.5, 40 / speed)}s`,
-              }}
-            />
-          ))}
+        <div
+          className="bg-layers mode-scroll"
+          style={{ '--tile': tilePx ? `${tilePx}px` : '1600px' }}
+        >
+          <div
+            className="bg-layer bg-marquee"
+            style={{
+              backgroundImage: `url(${resolve(bgList[0])})`,
+              animationDuration: `${Math.max(0.5, 40 / speed)}s`,
+            }}
+          />
         </div>
       ) : mode === 'kenburns' ? (
         <div

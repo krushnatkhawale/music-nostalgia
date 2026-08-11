@@ -1,41 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1a0f08"/>
-      <stop offset="0.55" stop-color="#33200f"/>
-      <stop offset="0.75" stop-color="#4a2c14"/>
-      <stop offset="1" stop-color="#5a3418"/>
+      <stop offset="0" stop-color="#9fbdd4"/>
+      <stop offset="0.5" stop-color="#c8d8d4"/>
+      <stop offset="0.75" stop-color="#e3dcc0"/>
+      <stop offset="1" stop-color="#f0e2bd"/>
     </linearGradient>
     <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#241a12"/>
-      <stop offset="1" stop-color="#120d09"/>
+      <stop offset="0" stop-color="#6b6356"/>
+      <stop offset="1" stop-color="#454039"/>
     </linearGradient>
     <pattern id="dashes" width="200" height="6" patternUnits="userSpaceOnUse">
-      <rect x="0" y="0" width="90" height="6" fill="#f5b301" opacity="0.8"/>
+      <rect x="0" y="0" width="90" height="6" fill="#f4ead0" opacity="0.85"/>
     </pattern>
     <g id="block">
-      <rect x="0" y="430" width="90" height="130" fill="#160e08"/>
-      <rect x="90" y="380" width="120" height="180" fill="#1a110a"/>
-      <rect x="210" y="420" width="100" height="140" fill="#150d07"/>
-      <rect x="310" y="400" width="90" height="160" fill="#180f09"/>
-      <rect x="40" y="452" width="8" height="12" fill="#ffcf7a" opacity="0.55"/>
-      <rect x="120" y="422" width="8" height="12" fill="#ffcf7a" opacity="0.4"/>
-      <rect x="240" y="452" width="8" height="12" fill="#ffcf7a" opacity="0.5"/>
-      <rect x="330" y="442" width="8" height="12" fill="#ffcf7a" opacity="0.35"/>
-      <rect x="20" y="472" width="60" height="18" fill="#0e0a06"/>
-      <rect x="150" y="432" width="70" height="16" fill="#0e0a06"/>
-      <rect x="250" y="452" width="60" height="18" fill="#0e0a06"/>
+      <rect x="0" y="430" width="90" height="130" fill="#b3a68c"/>
+      <rect x="90" y="380" width="120" height="180" fill="#a7977c"/>
+      <rect x="210" y="420" width="100" height="140" fill="#c0b296"/>
+      <rect x="310" y="400" width="90" height="160" fill="#9c8c70"/>
+      <rect x="0" y="428" width="90" height="8" fill="#6f614a" opacity="0.55"/>
+      <rect x="90" y="378" width="120" height="8" fill="#6f614a" opacity="0.55"/>
+      <rect x="210" y="418" width="100" height="8" fill="#6f614a" opacity="0.55"/>
+      <rect x="310" y="398" width="90" height="8" fill="#6f614a" opacity="0.55"/>
+      <rect x="40" y="452" width="8" height="12" fill="#574a36" opacity="0.6"/>
+      <rect x="120" y="422" width="8" height="12" fill="#574a36" opacity="0.45"/>
+      <rect x="240" y="452" width="8" height="12" fill="#574a36" opacity="0.55"/>
+      <rect x="330" y="442" width="8" height="12" fill="#574a36" opacity="0.4"/>
+      <rect x="20" y="472" width="60" height="18" fill="#6b5b42"/>
+      <rect x="150" y="432" width="70" height="16" fill="#6b5b42"/>
+      <rect x="250" y="452" width="60" height="18" fill="#6b5b42"/>
     </g>
     <g id="streetlight">
-      <rect x="-4" y="390" width="8" height="170" fill="#0b0806"/>
-      <path d="M-14 388 Q 0 366 14 388 L 14 386 Q 0 362 -14 386 Z" fill="#3a2a12"/>
-      <ellipse cx="0" cy="640" rx="100" ry="30" fill="#ffcf7a" opacity="0.14"/>
-      <ellipse cx="0" cy="640" rx="50" ry="15" fill="#ffcf7a" opacity="0.12"/>
+      <rect x="-4" y="390" width="8" height="170" fill="#4c4033"/>
+      <path d="M-14 388 Q 0 366 14 388 L 14 386 Q 0 362 -14 386 Z" fill="#7a6a50"/>
+      <ellipse cx="0" cy="648" rx="70" ry="16" fill="#3a342c" opacity="0.12"/>
     </g>
   </defs>
 
   <rect width="1600" height="900" fill="url(#sky)"/>
-  <ellipse cx="800" cy="560" rx="900" ry="160" fill="#f5b301" opacity="0.06"/>
+  <ellipse cx="800" cy="560" rx="900" ry="160" fill="#fff3d6" opacity="0.28"/>
 
   <use href="#block" x="0"/>
   <use href="#block" x="400"/>
@@ -43,13 +46,13 @@
   <use href="#block" x="1200"/>
 
   <rect y="560" width="1600" height="340" fill="url(#road)"/>
-  <rect y="560" width="1600" height="6" fill="#000" opacity="0.35"/>
+  <rect y="560" width="1600" height="6" fill="#2e2923" opacity="0.3"/>
   <rect y="725" width="1600" height="6" fill="url(#dashes)"/>
-  <rect y="595" width="1600" height="3" fill="#f5b301" opacity="0.18"/>
-  <rect y="868" width="1600" height="3" fill="#f5b301" opacity="0.18"/>
+  <rect y="595" width="1600" height="3" fill="#c9b98f" opacity="0.3"/>
+  <rect y="868" width="1600" height="3" fill="#c9b98f" opacity="0.3"/>
 
-  <use href="#streetlight" x="100"/>
-  <use href="#streetlight" x="500"/>
-  <use href="#streetlight" x="900"/>
-  <use href="#streetlight" x="1300"/>
+  <use href="#streetlight" x="200"/>
+  <use href="#streetlight" x="600"/>
+  <use href="#streetlight" x="1000"/>
+  <use href="#streetlight" x="1400"/>
 </svg>
