@@ -13,5 +13,8 @@
       "url": "https://open.spotify.com/playlist/2AVjI8Z57bqMJVtU3V9X1Q"
     }
   },
-  "backgrounds": []
+  "backgrounds": ["bg-street.svg"],
+  "backgroundMode": "scroll",
+  "backgroundSpeed": 1,
+  "backgroundVideo": ""
 }

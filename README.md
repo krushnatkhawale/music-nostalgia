@@ -16,8 +16,10 @@ no API keys.
 
 | File | What it controls |
 |------|------------------|
-| `config/site.json` | Name, tagline, accent color, default YouTube playlist id, top-right playlist link pills (`playlists`), background image URLs (`backgrounds`, optional) |
+| `config/site.json` | Name, tagline, accent color, default YouTube playlist id, top-right playlist link pills (`playlists`), and the background: `backgrounds` (image paths), `backgroundMode` (`static` / `crossfade` / `kenburns` / `scroll` / `video`), `backgroundSpeed` (multiplier), `backgroundVideo` (looping webm/mp4 path — saloon's approach) |
 | `config/tracks.json` | The curated track list: `[{ "title", "artist", "videoId" }]` |
+
+Background paths may be repo-relative (`bg-street.svg`), or full `http(s)` URLs. Image paths are resolved against the deploy base, so the site works on any sub-path. `scroll` mode is a seamless driving-view loop (the image must tile horizontally — `public/bg-street.svg` is a tileable placeholder); `kenburns` is a slow cinematic pan/zoom; `video` plays a muted looping clip (ideal: a driver-POV stock clip).
 
 - Tracks currently seeded from the `saloon.wtf` YouTube playlist (`PLTJ1PnzCWyFw`)
   — 61 embeddable tracks, one age-restricted video dropped.

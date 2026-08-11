@@ -8,6 +8,7 @@ import TransportControls from './components/TransportControls'
 import VolumeControl from './components/VolumeControl'
 import QueueDrawer from './components/QueueDrawer'
 import LinkPills from './components/LinkPills'
+import Background from './components/Background'
 
 const STORE = {
   get index() {
@@ -113,27 +114,13 @@ export default function App() {
     [yt]
   )
 
-  const backgrounds = SITE.backgrounds || []
   const accent = SITE.accent || '#f5b301'
 
   return (
     <div className="app" style={{ '--accent': accent }}>
       <div id="youtube-root" className="youtube-root" aria-hidden="true" />
 
-      {backgrounds.length > 0 && (
-        <div className="bg-layers">
-          {backgrounds.map((bg) => (
-            <div
-              key={bg}
-              className="bg-layer"
-              style={{
-                backgroundImage: `url(${bg})`,
-                opacity: backgrounds.indexOf(bg) === index % backgrounds.length ? 1 : 0,
-              }}
-            />
-          ))}
-        </div>
-      )}
+      <Background activeIndex={index} />
 
       <LinkPills playlists={SITE.playlists} />
 
